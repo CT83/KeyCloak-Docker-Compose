@@ -1,7 +1,10 @@
 {
-  "realm": "quickstart",
+  "realm": "TestRealm",
   "bearer-only": true,
-  "auth-server-url": "http://localhost:8180/auth",
+  "auth-server-url": "http://localhost:8080/auth/",
   "ssl-required": "external",
-  "resource": "service-nodejs"
+  "resource": "node-microservice",
+  "verify-token-audience": true,
+  "use-resource-role-mappings": true,
+  "confidential-port": 0
 }

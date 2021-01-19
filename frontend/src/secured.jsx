@@ -15,6 +15,7 @@ class Secured extends Component {
             if (authenticated) {
                 window.accessToken = keycloak.token;
                 console.log(window.accessToken);
+                this.setState({token:keycloak.token})
             }
         })
     }
@@ -22,7 +23,9 @@ class Secured extends Component {
     render() {
         if (this.state.keycloak) {
             if (this.state.authenticated) return (
-                <div><p>This is a keycloak-secured compoent of your application</p></div>
+                <div><p>This is a keycloak-secured compoent of your application</p>
+                <p>{this.state.token}</p>
+                </div>
             ); else return (<div> Unable to authenticate</div>);
         } return (<div>Initializing Keycloak...</div>);
     }
