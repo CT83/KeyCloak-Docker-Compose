@@ -4,6 +4,7 @@ var router = express.Router();
 var app = express();
 
 const keycloak = require("./keycloak-config.js").initKeycloak();
+console.log(keycloak);
 app.use(keycloak.middleware());
 
 router.get('/user', keycloak.protect('user'), function (req, res) {

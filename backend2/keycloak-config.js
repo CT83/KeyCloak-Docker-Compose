@@ -32,3 +32,7 @@ function initKeycloak() {
         return keycloak;
     }
 }
+
+module.exports = {
+    initKeycloak
+}
